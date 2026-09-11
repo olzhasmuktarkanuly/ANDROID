@@ -66,4 +66,51 @@ if (day > maxDays || month > 12) {
 }
 
 
+
+//task3
+  String text = "flutter mobile development";
+  int count = 0;
+
+  for (int i = 0; i <text.length; i++) {
+    String letter = text[i];
+    if (letter == 'a' || letter== 'e' || letter == 'i' ||letter == 'o' || letter == 'u') {
+      count = count + 1;
+    }
+  }
+  print("$text -> $count");
+
+//Task4
+  List<int> numbers = [14, 88, 3, 42, 99, 12, 67];
+
+  int min = numbers[0];
+  int max = numbers[0];
+
+  for (int i =0; i < numbers.length; i++) {
+    if (numbers[i] > max) {
+      max = numbers[i];
+    }
+    if (numbers[i]< min) {
+      min = numbers[i];
+    }
+  }
+  print("max: $max, min: $min");
+
+  //task5
+  int numToCheck = 3;
+  bool isPrime = true;
+
+  for (int i = 2; i < numToCheck; i++) {
+    if (numToCheck% i == 0) {
+      isPrime = false;
+  }
+   }
+
+  if (isPrime== true) {
+    print("$numToCheck -> prime number");
+  } else {
+    print("$numToCheck -> not prime number");
+  }
+
+
+
 }
