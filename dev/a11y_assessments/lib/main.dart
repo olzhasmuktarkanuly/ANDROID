@@ -113,4 +113,45 @@ if (day > maxDays || month > 12) {
 
 
 
+
+  double total1 = processOrder(
+      orderId:"ORD-001",
+      itemPrice: 2000.0
+  );
+
+  double total2= processOrder(
+      orderId: "ORD-002",
+      itemPrice: 5000.0,
+      promoCode: 'SAVE10',
+      deliveryFee: 0.0
+  );
+}
+
+double processOrder({
+  required String orderId,
+  required double itemPrice,
+  String? promoCode,
+  double? deliveryFee,
+}) {
+
+
+  double actualDeliveryFee = deliveryFee ?? 500.0;
+  double finalItemPrice = itemPrice;
+
+  if (promoCode == 'SAVE10') {
+    finalItemPrice = itemPrice - (itemPrice * 0.10);
+  }
+
+  double total = finalItemPrice + actualDeliveryFee;
+
+  print("Order ID: $orderId");
+  print("Original Item Price: $itemPrice ₸");
+  if (promoCode== 'SAVE10') {
+    print("Discount applied: 10%");
+  }
+  print("Delivery Fee:$actualDeliveryFee ₸");
+  print("Total to pay: $total ₸");
+
+  return total;
+
 }
